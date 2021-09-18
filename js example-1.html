@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sample()
+        {
+        confirm("OnClicking OK, you accept the terms and conditions of our Company.")
+        document.getElementById("one").innerHTML="Authenticating...";
+        var name=prompt("Please enter your Username : ");
+        var pwd=prompt("Enter Password : ")
+        if(name=="Adithya" && pwd == "A12345678") alert("Hi " + name + ". Login Successful :)");
+        else alert("Login Failure..")
+        }
+        function sample2()
+        {
+            //document.getElementById("two").innerHTML="<button type="submit" value="Unlock"> Click To Unlock </button>";
+            alert("You have unlocked the secret...");
+        }
+    </script>
+</head>
+<body>
+    <button id="one" type="submit" onclick=sample() value="Login"> LogIn </button>
+  
+</body>
+</html>

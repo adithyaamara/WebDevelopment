@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func()
+        {
+        var str = prompt("Enter string : ");
+        var c = prompt("Enter character to be searched for : ")
+        var n=str.indexOf(c);
+        document.getElementById("demo1").innerHTML= "The actual string is :" + str;
+        document.getElementById("demo2").innerHTML= "The Character to be searched for is : " + c;
+        document.getElementById("demo3").innerHTML= "The character is found at index : " + ++n;
+        }
+    </script>
+    <p id="demo1">The actual string is : Pending...</p>
+    <p id="demo2">The Character to be searched for is : Pending...</p>
+    <p id="demo3">The character is found at index : Pending...</p>
+    <button type="submit" onmouseover=func()>Start</button>
+</body>
+</html>

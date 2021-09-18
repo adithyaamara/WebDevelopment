@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prob - 3 - Date Usage</title>
+    
+</head>
+<body>
+    <script>
+        function clk()
+        {
+        var today=new Date();
+        var dt = today.toLocaleString("default", { weekday: "long" }) + ' --- ' + today.getDate() + '-' + today.getMonth() +'-' + today.getFullYear() + '  ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        document.getElementById("time").innerHTML=dt;
+        var hr=today.getHours();
+        if(hr < 12 ) document.getElementById("demo").innerHTML="Good Morning.";
+        else if(hr >=12 && hr<=17 ) document.getElementById("demo").innerHTML="Good Afternoon.";
+        else  document.getElementById("demo").innerHTML="Good Evening.";
+        }
+        setInterval(() => {clk();}, 1000);
+    </script>
+    <p id="time"></p> 
+    <p id="demo"></p>
+</body>
+</html>

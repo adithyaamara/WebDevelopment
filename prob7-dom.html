@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function invoicegen()
+        {   
+            var item1 = document.getElementById("one").value;
+            var item2 = document.getElementById("two").value;
+            var item3 = document.getElementById("three").value;
+            var item4 = document.getElementById("four").value;
+            
+            
+            if(0==item1 && 0==item2 && 0==item3 && 0==item4)
+            {
+                alert("No Item Selected.");
+            }
+            //else alert(item1 + item2 + item3 + item4);
+            else
+            {
+                //var w=window.open();
+                //w.document.open();
+                //w.document.createElement("body")
+                //var heading = w.document.write("<h2>INVOICE<h2>");
+                localStorage.setItem("item1", item1);
+                localStorage.setItem("item2", item2);
+                localStorage.setItem("item3", item3);
+                localStorage.setItem("item4", item4);        
+                window.open("invoice.html");
+            }
+        }
+    </script>
+</head>
+<body align="center" bgcolor="cyan">
+    <table align="center" border="1" cellpadding=5px>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Qty</th>
+        </tr>
+        <tr>
+            <td>Barbie Doll</td>
+            <td>Beautiful</td>
+            <td>20</td>
+            <td><input type="number" name="doll" id="one" value=0></td>
+        </tr>
+        <tr>
+            <td>Calculator</td>
+            <td>Calculator with latest feauters</td>
+            <td>30</td>
+            <td><input type="number" name="calc" id="two" value=0></td>
+        </tr>
+        <tr>
+            <td>Mobile Phone</td>
+            <td>Camera,Jav,Games,GPRS</td>
+            <td>40</td>
+            <td><input type="number" name="mobile" id="three" value=0></td>
+        </tr>
+        <tr>
+            <td>LG DVD</td>
+            <td>5 Disc Changer</td>
+            <td>50</td>
+            <td><input type="number" name="dvd" id="four" value=0></td>
+        </tr>
+    </table>
+    <button type="submit" value="order" onclick=invoicegen()> Order </button>
+</body>
+</html>

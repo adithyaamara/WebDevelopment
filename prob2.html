@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=one.0">
+    <title>Document</title>
+    <script>
+        function Calculate()
+        {   
+            var pricipal=prompt("Principal Amount ?");
+            document.getElementById("four").innerHTML=pricipal;
+            //document.writeln("<br>");
+            var rate=prompt("Rate of interest ??");
+            document.getElementById("one").innerHTML=rate;
+            //document.writeln("<br>");
+            var period=prompt("Period in Years?");
+            document.getElementById("two").innerHTML=period;
+            //document.writeln("<br>");
+            var result=(pricipal*((Math.pow((1 + ( rate / 100 ) ),period)))) - pricipal;
+            document.getElementById("three").innerHTML=result;
+            alert("Compound Interest is : " + result);
+        }
+    </script>
+</head>
+<body>
+    <p>------------------------------------------------------------------</p>
+    <p>**********Calculate Compound Intrest***********"</p>
+    <p>------------------------------------------------------------------</p>
+    <table>
+        <tr>
+            <td>Principal Amount - </td>
+            <td id="four"> Pending</td>
+        </tr>
+        <tr>
+            <td>Rate of Interest - </td>
+            <td id="one"> pending </td>
+        </tr>
+        <tr>
+            <td>Period - </td>
+            <td id="two">Pending</td>
+        </tr>
+        <tr>
+            <td>Comp Interest - </td>
+            <td id="three">Calculating ....</td>
+        </tr>
+    </table>
+    <button type="submit" value="Calculate" onclick=Calculate()> Calculate </button>
+</body>
+</html>

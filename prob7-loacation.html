@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align="center">
+    <script>
+        function getjs()
+        {
+            document.getElementById("demo1").innerHTML=location.href;
+            document.getElementById("demo2").innerHTML=location.pathname;
+            document.getElementById("demo3").innerHTML=location.protocol;
+            //window.close();
+        }
+        //document.writeln(location.href);
+    </script>
+    <table align="center" border="1" cellspacing=3px style="border-color: blue;border-style: solid;border-radius: 5px;">
+        <tr>
+            <th colspan="2"> Location Object Properties </th>
+        </tr>
+        <tr>
+            <th>href</th>
+            <td id="demo1"></td>
+        </tr>
+        <tr>
+            <th>pathname</th>
+            <td id="demo2"></td>
+        </tr>
+        <tr>
+            <th>protocol</th>
+            <td id="demo3"></td>
+        </tr>
+    </table>
+    <button type="submit" onmouseover=getjs()> Get </button>
+</body>
+</html>

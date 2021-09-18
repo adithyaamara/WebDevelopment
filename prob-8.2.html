@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prob-8.2</title>
+    <script>
+        var catobj=
+        {
+            "Electronics" : ["Telivision","Laptop","Phone"],
+            "Grocery" : ["Soap","Powder"]
+        };
+        window.onload=function()
+        {
+
+        }
+    </script>
+</head>
+<body bgcolor="blue">
+    <h1 align="center">Product Details</h1>
+    <table align="center" cellspacing=5px>
+        <tr>
+            <th>Category:</th>
+            <td>
+                <select name="category" id="category">
+                    <option value="Electronics">Electronics</option>
+                    <option value="Grocery">Grocery</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Product</th>
+            <td><select name="product" id="product">
+                <option value=""></option>
+            </select></td>
+        </tr>
+        <tr>
+            <th>Quantity : </th>
+            <td><input type="number" name="" id="Quantity"></td>
+        </tr>
+        <tr>
+            <th>Total Price : </th>
+            <td><input type="text" name="" id="total"></td>
+        </tr>
+    </table>    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prob - 8 - Form Validation</title>
+    <script>
+        function calculate()
+        {   var loanamt=document.getElementById("one").value;
+            var roi=document.getElementById("two").value;
+            var years=document.getElementById("three").value;
+            //alert(loanamt);
+            if(years<7 || years>15)
+            {
+                alert("Repayment period can't be less than 7 or greater than 15.");
+            }
+            if(loanamt > 1500000)
+            {
+                alert("We can't give loan greater than 15 lakh. Sorry. ");
+            }
+            var v1=(loanamt+(loanamt*(roi/100)*12));
+            var v2=(loanamt+(loanamt*roi*years));
+            var v3=(loanamt*roi*years);
+            alert(v1);
+            document.getElementById("one1").innerHTML=v1;
+            document.getElementById("two2").innerHTML=v2;
+            document.getElementById("three3").innerHTML=v3;
+        }
+    </script>
+</head>
+<body>
+    <form method="POST">
+        <h2>Enter Loan Information : </h2>
+        <p> 1 ) Amount of loan (any currency) : <input type="number" name="loanamt" id="one"></p>
+        <p> 2 ) Annual Percentage rate of intrest : <input type="number" name="roi" id="two"></p>
+        <p> 3 ) Repayment period in years : <input type="number" name="years" id="three"></p>
+        <button type="submit" value="Compute" onclick="calculate()"> Compute </button>
+        <h2>Payment Information</h2>
+        <p> 4 ) Your monthly payment will be : </p> <p id="one1">Calculating...</p>
+        <p> 5 ) Your total payment will be : </p> <p id="two2">Calculating...</p>
+        <p> 6 ) Your total intrest payments will be : </p> <p id="three3">Calculating...</p>
+    </form>
+</body>
+</html>

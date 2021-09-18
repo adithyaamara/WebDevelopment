@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<!-- This document explains the different ways to include spacing in html -->
+  <head>
+    <title>My First HTML Document</title>
+<style>
+* {
+box-sizing: border-box;
+}
+body {
+font-family: cursive;
+}
+/* Style the header */
+header {
+background-color: #666;
+padding: 30px;
+text-align: center;
+font-size: 35px;
+color: white;
+}
+/* Create two columns/boxes that floats next to each other */
+nav {
+float: left;
+width: 30%;
+height: 300px; /* only for demonstration, should be removed */
+background: #ccc;
+padding: 20px;
+}
+/* Style the list inside the menu */
+nav ul {
+list-style-type:decimal ;
+padding: 2px;
+}
+article {
+float: right;
+padding: 20px;
+width: 70%;
+background-color: #f1f1f1;
+height: 300px; /* only for demonstration, should be removed */
+}
+/* Clear floats after the columns */
+section::after {
+content: "";
+display: table;
+clear: both;
+}
+/* Style the footer */
+footer {
+background-color: #777;
+padding: 10px;
+text-align: center;
+color: white;
+}
+</style>
+  </head>
+  <body>
+    
+    <header>Header Content</header>
+    <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+    </ul>
+    </nav>
+    <section>
+      <article>This is the article</article>
+    </section>
+    <footer>Footer content</footer>
+    
+  </body>
+</html>

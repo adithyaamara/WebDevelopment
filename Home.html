@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-LAB / Home</title>
+    <script>
+        function greet()
+        {
+            var name=prompt("May I know your Name ???");
+            document.getElementById("greet").innerHTML="Welcome " + name + " !!! ";
+        }
+    </script>
+    <style>
+        body{
+            background-image: url("https://www.threatstack.com/wp-content/uploads/2017/06/docker-cloud-twitter-card.png");
+            background-repeat:no-repeat;
+            background-position: top;
+            background-size:cover;
+        }
+        table{
+            text-align: center;
+            border-spacing: 4px;
+            font-size:larger;
+            border-radius: 5px;
+            border-width: medium;
+            border-color: black;
+            
+        }
+        h1
+        {
+            color: chocolate;
+        }
+    </style>
+</head>
+<body onload=greet()>
+   <h1 id="greet"> Welcome User !!!</h1>
+   <h3 align="left" style="font-weight: 100px;">This site consists of various utility apps written using HTML  </h1>
+   <table align="left" border="1">
+       <tr>
+           <th>App</th>
+           <th>Purpose</th>
+           <th>Link</th>
+       </tr>
+       <tr>
+           <td>About</td>
+           <td>Author's notes.</td>
+           <td><a id="1" href="./index.html">Click Me!</a></td>
+       </tr>
+       <tr>
+           <td>Shopping</td>
+           <td>Shopping Bill Generator</td>
+           <td><a id="2" href="./shopping.html">Click Me!</a></td>
+       </tr>
+       <tr>
+           <td>C-Cal</td>
+           <td>Compound Interest Calculator</td>
+           <td><a id="3" href="./compounding.html">Click Me!</a></td>
+       </tr>
+       <tr>
+           <td>L-Cal</td>
+           <td>Loan Calculator</td>
+           <td><a id="4" href="./loan.html">Click Me!</a></td>
+       </tr>
+       <tr>
+           <td align="center" colspan="3">More Feauters Coming Soon.</td>
+       </tr>
+   </table>
+</body>
+</html>
