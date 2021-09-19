@@ -2,6 +2,11 @@
   <head>
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      window.onload = function() {
+          drawChartBar();
+    }
+    </script>
     <script type="text/javascript">
 
       // Load the Visualization API and the corechart package.
@@ -59,21 +64,113 @@
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-    </script>
-    <script>
-      function bar()
-      {
-        document.getElementById
-      }
+      function drawChartLine() {
+
+// Create the data table.
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Topping');
+data.addColumn('number', 'Slices');
+data.addRows([
+  ['Mushrooms', 3],
+  ['Onions', 1],
+  ['Olives', 1],
+  ['Zucchini', 1],
+  ['Pepperoni', 2]
+]);
+
+// Set chart options
+var options = {'title':'How Much Pizza I Ate Last Night',
+               'width':500,
+               'height':300};
+
+// Instantiate and draw our chart, passing in some options.
+var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+function drawChartColumn() {
+
+// Create the data table.
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Topping');
+data.addColumn('number', 'Slices');
+data.addRows([
+  ['Mushrooms', 3],
+  ['Onions', 1],
+  ['Olives', 1],
+  ['Zucchini', 1],
+  ['Pepperoni', 2]
+]);
+
+// Set chart options
+var options = {'title':'How Much Pizza I Ate Last Night',
+               'width':500,
+               'height':300};
+
+// Instantiate and draw our chart, passing in some options.
+var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+function drawChartArea() {
+
+// Create the data table.
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Topping');
+data.addColumn('number', 'Slices');
+data.addRows([
+  ['Mushrooms', 3],
+  ['Onions', 1],
+  ['Olives', 1],
+  ['Zucchini', 1],
+  ['Pepperoni', 2]
+]);
+
+// Set chart options
+var options = {'title':'How Much Pizza I Ate Last Night',
+               'width':500,
+               'height':300};
+
+// Instantiate and draw our chart, passing in some options.
+var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+function ChangeChart()
+{
+  var val = document.getElementById("charttype").value;
+  if(val == "BarChart")
+    drawChartBar();
+    else if(val == "ColumnChart")
+    drawChartColumn();
+    else if(val == "AreaChart")
+    drawChartArea();
+    else if (val == "LineChart")
+    drawChartLine();
+    else if(val == "PieChart")
+    drawChartPie()
+    else
+    drawChartLine();
+}
     </script>
   </head>
 
   <body border=1 align="center">
     <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+    <div id="chart_div" align="center"></div>
     <div id="TypeSelection" style="align-content: center;">
-      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Pie Chart" onclick=drawChartBar()>Pie Chart</button><br><br>
-      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Bar Chart" onclick=drawChartPie()>Bar Chart</button>
+      <label for="charttype">Select Chart Type : </label>
+      <select id="charttype" value="ColumnChart" onchange=ChangeChart()>
+        <option value="BarChart">BarChart</option>
+        <option value="ColumnChart">ColumnChart</option>
+        <option value="LineChart">Line Chart</option>
+        <option value="PieChart">Pie Chart</option>
+        <option value="AreaChart">Area Chart</option>
+      </select>
+      <!--- Using Buttons :
+      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Pie Chart" onclick=drawChartPie()>Pie Chart</button>
+      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Bar Chart" onclick=drawChartBar()>Bar Chart</button>
+      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Pie Chart" onclick=drawChartLine()>Line Chart</button>
+      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Pie Chart" onclick=drawChartColumn()>Column Chart</button>
+      <button style="border-radius: 10px;border-color: green;background-color: azure;" value="Pie Chart" onclick=drawChartArea()>Area Chart</button>
+      -->
     </div>
     
   </body>
