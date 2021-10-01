@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Charts - D3</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  <!--Load the AJAX API-->
+    <script src="https://d3js.org/d3.v4.min.js"></script> <!--D3 JS FOR CSV LOAD-->
+    <script>
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart(){
+            d3.csv("https://raw.githubusercontent.com/QamarFarooq/data-for-testing/main/5_OneCatSevNumOrdered.csv",function(loadedData){
+                //console.log(loadedData)
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Year');
+                data.addColumn('number', 'Capacity');
+                data.addRows(loadedData.length - 1);
+                for(let i=0;i<loadedData.length-1;i++){
+                    let year = loadedData[i].year;
+                    let n = loadedData[i].n;
+                    data.setCell(i, 0, year);
+                    data.setCell(i, 1, n);
+                }
+                // Set chart options
+                var options = {'title':'Capacity trend wrt Year',
+                               'width':600,
+                               'height':600};
+        
+                // Instantiate and draw our chart, passing in some options.
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="chart_div"></div>
+</body>
+</html>
